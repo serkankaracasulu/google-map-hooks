@@ -17,8 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/OWNER/REPOSITORY.git",
-    "directory": "packages/name"
+    "url": "git@github.com:serkankaracasulu/google-map-hooks.git"
   },
   "devDependencies": {
     "@types/googlemaps": "^3.40.0",
