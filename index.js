@@ -1,5 +1,4 @@
 import React from 'react';
-import url from 'url';
 
 export const useLayzLocationTrack = () => {
   const [position, setPosition] = React.useState();
@@ -59,7 +58,7 @@ export const useGeocode = (position, key) => {
     loading: true,
     error: false,
   });
-  const uri = url.resolve(
+  const uri = urlResolve(
     'https://maps.googleapis.com/maps/api/geocode/json?',
     `json?latlng=${position.lat},${position.lng}&key=${key}`,
   );
@@ -71,3 +70,12 @@ export const useGeocode = (position, key) => {
   }, [uri]);
   return result;
 };
+export function urlResolve(from, to) {
+  const resolvedUrl = new URL(to, new URL(from, 'resolve://'));
+  if (resolvedUrl.protocol === 'resolve:') {
+    // `from` is a relative URL.
+    const { pathname, search, hash } = resolvedUrl;
+    return pathname + search + hash;
+  }
+  return resolvedUrl.toString();
+}

@@ -13,15 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.13.1"
+    "react": "^18.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:serkankaracasulu/google-map-hooks.git"
   },
   "devDependencies": {
-    "@types/googlemaps": "^3.40.0",
-    "typescript": "^4.0.3",
+    "@types/googlemaps": "^3.43.0",
+    "typescript": "^4.6.4",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0"
   }
